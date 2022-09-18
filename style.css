@@ -114,3 +114,16 @@ a {
 li {
   list-style-type: none;
 }
+
+/*** utility classes ***/
+.section__padding {
+  padding: var(--padding-d-l-v) var(--padding-d-l-h);
+}
+.section__title {
+  font-size: var(--font-size-d-sc);
+  font-weight: 900;
+}
+.section__paragraph {
+  font-size: var(--font-size-st-sc);
+  color: var(--color-quaternary);
+}

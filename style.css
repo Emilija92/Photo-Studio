@@ -10,3 +10,107 @@
   margin: 0;
   box-sizing: border-box;
 }
+/*** basic styles and variables ***/
+/* 
+        --------------------- Sizing Nature Padding
+        d     = dynamic
+        st    = static
+
+        --------------------- Sizing
+
+        l     = large
+        m     = medium
+        s     = small
+        xs    = extra small
+        c     = customized
+
+          
+        --------------------- Orientation
+        v  = vertical   (top & bottom)
+        h  = horizontal (right & left)
+  */
+  /* 
+      --------------------- Sizing Nature Typography
+      d     = dynamic
+      st    = static
+      
+      --------------------- Sizing
+      xl    = extra large
+      l     = large
+      m     = medium
+      s     = small
+      xs    = extra small
+      c     = customized
+      
+      --------------------- Family
+      font-family: 'Oswald', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+*/
+html {
+
+  font-size: 62.5%; 
+  /*** colors ***/
+  --color-primary: rgb(255,255,255);
+  --color-secondary: rgb(28, 28, 28);
+  --color-secondary-m: rgba(28, 28, 28, 0.4);
+  --color-tertiary: rgb(43, 43, 43);
+  --color-quaternary: rgb(129, 126, 126);
+  /*** padding ***/
+  /* Dynamic */
+  --padding-d-l-v: calc(2rem + 12vh);
+  --padding-d-l-h: calc(2rem + 12vw);
+
+  --padding-d-mc-v: calc(1rem + 4vh);
+  --padding-d-mc-h: calc(1rem + 4vw);
+
+  --padding-d-m-v: calc(1rem + 2vh);
+  --padding-d-m-h: calc(1rem + 2vw);
+
+  --padding-d-s-h: calc(1rem + 1vw);
+  --padding-d-s-v: calc(1rem + 1vh);
+
+  /* Static */
+  --padding-st-l-h: 3rem;
+  --padding-st-l-v: 2rem;
+
+  --padding-st-m-h: 2.5rem;
+  --padding-st-m-v: 1.5rem;
+
+  --padding-st-s-h: 2rem;
+  --padding-st-s-v: 1rem;
+
+  /*** typography ***/
+  /* Dynmaic */
+  --font-size-d-lc: calc(3rem + 3.5vw);
+  --font-size-d-l: calc(2rem + 3vw);
+  --font-size-d-mc: calc(2rem + 2.5vw);
+  --font-size-d-m: calc(1rem + 2vw);
+  --font-size-d-sc: calc(1rem + 1.5vw);
+  --font-size-d-s: calc(1rem + 1vw);
+
+  /* Static */
+  --font-size-st-xl: 4rem;
+  --font-size-st-lc: 3.5rem;
+  --font-size-st-l: 3rem;
+  --font-size-st-mc: 2.5rem;
+  --font-size-st-m: 2rem;
+  --font-size-st-sc: 1.5rem;
+  --font-size-st-s: 1rem;
+
+  /* Family */
+  --font-family-title: "Oswald", sans-serif;
+  --font-family-content: "Plus Jakarta Sans", sans-serif;
+
+}
+body {
+  background-color: var(--color-primary);
+  font-family: var(--font-family-content);
+  line-height: 1.6;
+}
+a {
+  text-decoration: none;
+  border-radius: 1rem;
+}
+li {
+  list-style-type: none;
+}

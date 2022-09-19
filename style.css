@@ -127,3 +127,13 @@ li {
   font-size: var(--font-size-st-sc);
   color: var(--color-quaternary);
 }
+/*** overall layout ***/
+.container {
+  display: grid;
+  grid-template-columns: [container-start] repeat(12, minmax(min-content, 12.5rem)) [container-end];
+  grid-template-rows: repeat(9, min-content);
+  justify-content: center;
+}
+.overall-layout {
+  grid-column: container-start / container-end;
+}

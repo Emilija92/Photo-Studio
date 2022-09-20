@@ -626,3 +626,18 @@ CONTACT SECTION
   font-size: var(--font-size-st-s);
   color: var(--color-quaternary);
 }
+/************************
+CLIENTS SECTION
+************************/
+.clients {
+  background-color: var(--color-secondary);
+  padding: 0 var(--padding-d-l-h);
+  display: flex;
+  justify-content: space-between;
+  height: calc(2rem + 5vw);
+}
+.clients__client img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}

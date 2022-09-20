@@ -226,11 +226,12 @@ HERO SECTION
 }
 .hero__content--links {
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 .hero__content--links__my-works,
 .hero__content--links__contact  {
-  flex-basis: 30%;
+  flex-basis: 15rem;
   padding: var(--padding-st-s-v) var(--padding-st-m-h);
   border-radius: 5rem;
   font-size: var(--font-size-st-sc);
@@ -478,6 +479,7 @@ MY WORK SECTION
 .my-works__areas {
   display: flex;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 .my-works__areas--area {
   cursor: pointer;
@@ -491,7 +493,7 @@ MY WORK SECTION
 }
 .my-works__imgs {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   grid-template-rows: repeat(4, min-content);
   gap: 2rem;
 }
@@ -593,7 +595,7 @@ CONTACT SECTION
   color: var(--color-secondary);
 }
 .contact__testimonial {
-  flex-basis: 40%;
+  flex-basis: 50%;
   display: flex;
   flex-direction: column;
   gap: 4rem;
@@ -652,7 +654,7 @@ FOOTER
   display: flex;
   flex-direction: column;
   gap: 4rem;
-  background-image:linear-gradient(to bottom, var(--color-secondary), var(--color-secondary-m)), url("images/footer-bg.jpg");
+  background-image:linear-gradient(to bottom, var(--color-secondary-m-2), var(--color-secondary-m-2)), url("images/footer-bg.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -768,11 +770,22 @@ FOOTER
   gap: 2rem;
 }
 /*******************************
-RESPONSIVE
+RESPONSIVE MEDIA QUERIES
 *******************************/
+@media  screen and (max-width: 1300px) {
+  /*********************** MY WORKS SECTION ***************************/
+  .my-works__imgs--img {
+    grid-column: auto / auto !important;
+    grid-row: auto/ auto !important;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .section__padding {
     padding: var(--padding-d-l-v) var(--padding-d-mc-h);
+  }
+  .section__title {
+    font-size: var(--font-size-st-mc);
   }
   /*********************** HEADER ***************************/
   .header__nav {
@@ -831,5 +844,110 @@ RESPONSIVE
   }
   .hamburger__line-3 {
     transform: rotate(-45deg) translateX(-0.2rem) translateY(-2.1rem);
+  }
+  /*********************** HERO SECTION ***************************/
+  .hero__content {
+    flex-basis: auto;
+  }
+  .hero__bg {
+    width: 100%;
+  }
+ /*********************** PERSONAL INFO SECTION ***************************/
+  .personal-info {
+    flex-wrap: wrap;
+  }
+  .personal-info__content,
+  .personal-info__img {
+    flex-basis: 100%;
+  }
+  .personal-info__img img {
+    height: 100%;
+    width: 100%;
+  }
+  .personal-info__img::before {
+    left: -10%;
+  }
+  /*********************** SERVICES SECTION ***************************/
+  .services__service-cards--card {
+    border: none !important;
+  }
+  /*********************** NEWS SECTION ***************************/
+  .news__article--content {
+    grid-column: 1 / -1;
+    background-color: var(--color-secondary-m-2);
+  }
+  .news__article--content__mini-title {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+  }
+  .news__article--content__title {
+    color: var(--color-primary);
+  }
+  .news__article--content__link {
+    color: var(--color-primary);
+  }
+  .news__article--content__link::after {
+    background-color: var(--color-primary);
+  }
+  .news__article--img {
+    grid-column: 1 / -1;
+  }
+  /*********************** CONTACT SECTION ***************************/
+  .contact {
+    flex-wrap: wrap;
+  }
+  .contact__info,
+  .contact__testimonial {
+    flex-basis: 100%;
+  }
+  .contact__testimonial {
+    background-color: var(--color-secondary-m-2);
+  }
+  .contact__testimonial--info__name {
+    color: var(--color-primary);
+  }
+  /*********************** FOOTER ***************************/
+  .footer__newsletter {
+    flex-wrap: wrap;
+    gap: 2rem 0;
+  }
+  .footer__newsletter--content,
+  .footer__newsletter--form {
+    flex-basis: 100%;
+  }
+  .footer__newsletter--form input {
+    padding: var(--padding-st-s-v) var(--padding-st-s-h);
+    font-size: var(--font-size-st-s);
+  }
+  .footer__author {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .footer__author--quick-links,
+  .footer__author--info {
+    border: none;
+  }
+  .footer__author--info,
+  .footer__author--quick-links,
+  .footer__author--contact {
+    flex-basis: 100%;
+  }
+  .footer__copy-rights {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 500px) {
+  .section__padding {
+    padding: var(--padding-st-l-v) var(--padding-st-s-h);
+  }
+  /*********************** MY WORKS SECTION ***************************/
+  .my-works__imgs {
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 0;
+  }
+  /*********************** SERVICES SECTION ***************************/
+  .services__service-cards {
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   }
 }
